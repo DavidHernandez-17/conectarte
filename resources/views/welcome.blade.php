@@ -33,16 +33,16 @@
                     @else
                         <a
                             href="{{ route('login') }}"
-                            class="inline-block px-5 py-1.5 text-[#1b1b18] border border-transparent hover:border-[#19140035] rounded-sm text-sm leading-normal"
+                            class="inline-block px-5 py-1.5 text-[#1b1b18] border border-transparent hover:border-[#19140035] rounded-full text-sm leading-normal"
                         >
-                            Log in
+                            Iniciar sesión
                         </a>
 
                         @if (Route::has('register'))
                             <a
                                 href="{{ route('register') }}"
-                                class="inline-block px-5 py-1.5 border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] rounded-sm text-sm leading-normal">
-                                Register
+                                class="inline-block px-5 py-1.5 border-[#19140035] hover:bg-gray-600 border hover:text-white text-[#1b1b18] rounded-full text-sm leading-normal">
+                                Registrarse
                             </a>
                         @endif
                     @endauth
@@ -112,7 +112,7 @@
                     </ul>
                     <ul class="flex gap-3 text-sm leading-normal">
                         <li>
-                            <a href="https://cloud.laravel.com" target="_blank" class="inline-block hover:bg-black hover:border-black px-5 py-1.5 bg-[#1b1b18] rounded-sm border border-black text-white text-sm leading-normal">
+                            <a href="https://cloud.laravel.com" target="_blank" class="inline-block hover:bg-black hover:border-black px-5 py-1.5 bg-[#1b1b18] rounded-full border border-black text-white text-sm leading-normal">
                                 Deploy now
                             </a>
                         </li>
