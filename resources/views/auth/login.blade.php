@@ -1,48 +1,64 @@
 <x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+    <div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+        <div class="w-full max-w-md bg-white rounded-lg shadow-md p-6">
+            <div class="flex justify-center mb-6">
+                <img src="{{ asset('assets/branding/conectarte-logo.png') }}" alt="Logo" class="w-32 h-auto">
+            </div>
 
-        <x-validation-errors class="mb-4" />
+            @if ($errors->any())
+            <div class="mb-4 text-red-600 text-sm">
+                <ul class="list-disc pl-5">
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
 
-        @session('status')
+            @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
+                {{ session('status') }}
             </div>
-        @endsession
+            @endif
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+            <form method="POST" action="{{ route('login') }}" class="space-y-4">
+                @csrf
 
-            <div>
-                <x-label for="email" value="{{ __('Correo electrónico') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+                    <!-- <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username"
+                        class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-primary text-sm"> -->
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Contraseña') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
+                    <input id="email" type="email" name="email" value="admin@conectarte.co" required autofocus autocomplete="username"
+                        class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-primary text-sm">
+                </div>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Recordarme') }}</span>
-                </label>
-            </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                    <!-- <input id="password" type="password" name="password" required autocomplete="current-password"
+                        class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-primary text-sm"> -->
+                    <input id="password" type="password" name="password" value="12345" required autocomplete="current-password"
+                        class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-primary text-sm">
+                </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Olvidaste tu contraseña?') }}
-                    </a>
-                @endif
+                <div class="flex items-center justify-between">
+                    <label class="flex items-center text-sm text-gray-600">
+                        <input type="checkbox" name="remember" class="mr-2 rounded border-gray-300 focus:ring-primary">
+                        Recordarme
+                    </label>
 
-                <x-button class="ms-4">
-                    {{ __('Iniciar sesión') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
+                    @if (Route::has('password.request'))
+                    <a href="{{ route('password.request') }}" class="text-sm text-primary hover:underline">¿Olvidaste tu contraseña?</a>
+                    @endif
+                </div>
+
+                <div>
+                    <button type="submit"
+                        class="w-full py-2 px-4 bg-primary text-white rounded-md text-sm font-semibold hover:bg-primary focus:outline-none focus:ring focus:ring-primary-300">
+                        Iniciar sesión
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </x-guest-layout>
