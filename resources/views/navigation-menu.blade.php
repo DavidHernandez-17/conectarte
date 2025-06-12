@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="{{ asset('assets/branding/conectarte-without-text.png') }}" alt="Logo" class="w-12 h-auto">
+                        <x-branding.logo-without-text />
                     </a>
                 </div>
 
