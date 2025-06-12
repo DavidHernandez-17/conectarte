@@ -15,12 +15,12 @@ class LoginForm extends Component
     'email' => 'required|email',
     'password' => 'required|min:5',
   ];
-  
+
   protected $messages = [
-    'email.required' => 'El campo correo electrónico es requerido.',
-    'email.email' => 'El campo correo electrónico debe ser válido.',
-    'password.required' => 'El campo contraseña es requerido.',
-    'password.min' => 'El campo contraseña debe ser al menos 5 carácteres.',
+    'email.required' => 'El correo electrónico es requerido.',
+    'email.email' => 'El correo electrónico debe ser válido.',
+    'password.required' => 'La contraseña es requerida.',
+    'password.min' => 'La contraseña debe tener al menos 5 caracteres.',
   ];
 
   public function login()
