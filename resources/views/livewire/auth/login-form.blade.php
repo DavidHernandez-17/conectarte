@@ -36,7 +36,11 @@
         @endif
       </div>
 
-      <div>
+      <div class="pt-2 flex items-center justify-between gap-2">
+        <a href="{{ route('register') }}"
+          class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gray-300 hover:bg-gray-500 hover:text-white rounded-md">
+          <span>Registrarme</span>
+        </a>
         <button type="submit"
           class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white rounded-md"
           wire:loading.attr="disabled"
