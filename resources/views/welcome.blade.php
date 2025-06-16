@@ -25,10 +25,10 @@
                 <nav class="flex items-center justify-end gap-4">
                     @auth
                         <a
-                            href="{{ url('/dashboard') }}"
+                            href="{{ url('/inicio') }}"
                             class="inline-block px-5 py-1.5 border-[#19140035] hover:bg-gray-600 border hover:text-white text-[#1b1b18] rounded-full text-sm leading-normal"
                         >
-                            Dashboard
+                            Inicio
                         </a>
                     @else
                         <a

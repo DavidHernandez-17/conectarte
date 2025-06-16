@@ -46,7 +46,7 @@
           wire:loading.attr="disabled"
           wire:target="register">
           <span>Registrarme</span>
-          <x-icon name="arrow-path" class="animate-spin h-4 w-4" wire:loading wire:target="register" />
+          <x-wireui:icon name="arrow-path" class="animate-spin h-4 w-4" wire:loading wire:target="register" />
         </button>
       </div>
     </form>

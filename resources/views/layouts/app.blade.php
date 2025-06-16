@@ -12,13 +12,9 @@
         <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Styles -->
+        @wireUiStyles
         @livewireStyles
-
-        <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        <!-- WireUI Scripts -->
-        @wireUiScripts
     </head>
     <body class="font-sans antialiased">
         <x-banner />
@@ -43,6 +39,7 @@
 
         @stack('modals')
 
+        @wireUiScripts
         @livewireScripts
     </body>
 </html>

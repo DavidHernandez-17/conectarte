@@ -32,7 +32,7 @@
         class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white rounded-md"
         wire:loading.attr="disabled">
         <span>Enviar enlace</span>
-        <x-icon name="arrow-path" class="animate-spin h-4 w-4" wire:loading />
+        <x-wireui:icon name="arrow-path" class="animate-spin h-4 w-4" wire:loading />
       </button>
     </div>
   </form>

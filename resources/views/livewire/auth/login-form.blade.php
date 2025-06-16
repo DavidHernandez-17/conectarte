@@ -46,7 +46,7 @@
           wire:loading.attr="disabled"
           wire:target="login">
           <span>Iniciar sesión</span>
-          <x-icon name="arrow-path" class="animate-spin h-4 w-4" wire:loading wire:target="login" />
+          <x-wireui:icon name="arrow-path" class="animate-spin h-4 w-4" wire:loading wire:target="login" />
         </button>
       </div>
     </form>
